@@ -5,13 +5,12 @@ const dotenv=require("dotenv");
 dotenv.config();
 const cors=require("cors");
 
-// mongoose.connect(process.env.DATABASE,()=>{
-//     // console.log(process.env.DATABASE)
-//     console.log("Connection to Database successfull");
-// },(err)=>{
-//     console.log(err);
-// });
-console.log(process.env.DATABASE);
+mongoose.connect(process.env.DB,()=>{
+    // console.log(process.env.DATABASE)
+    console.log("Connection to Database successfull");
+},(err)=>{
+    console.log(err);
+});
 
 
 
