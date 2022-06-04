@@ -21,7 +21,7 @@ function App() {
   },300);
   useEffect(()=>{
     axios.get("http://192.168.43.90:5000/student_list").then((res)=>{
-      console.log(res);
+      // console.log(res);
       Newlist(res.data);
     })
   },[]);

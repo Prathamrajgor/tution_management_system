@@ -7,7 +7,7 @@ import axios from "axios";
 // import CheckMonth from "./Check_month";
 export default function Fee_table() {
   const list = useContext(Student);
-  console.log(list);
+  // console.log(list);
   const [nav, Newnav] = useState(["block", "none", "none", "none"]);
   const [name, Newname] = useState("");
   const [month, Newmonth] = useState("");
@@ -198,7 +198,7 @@ export default function Fee_table() {
             <th className="border-2 border-black px-12"> May</th>
           </tr>
           {list.map((element, index) => {
-            console.log(element);
+            // console.log(element);
             return (
               <>
                 <tr className=" border-2 border-black w-40 ">
@@ -434,7 +434,7 @@ export default function Fee_table() {
                       payment_date: date,
                     }),
                   };
-                  console.log(obj);
+                  // console.log(obj);
                   axios.post("http://localhost:5000/add_fees", obj)
                     .then((res) => {
                       if (res.data == "s") {
@@ -451,11 +451,11 @@ export default function Fee_table() {
                           setTimeout(()=>{
                               Newfail("none");
                           },3500);
-                        console.log("Fail");
+                        // console.log("Fail");
                       }
                     })
                     .then((err) => {
-                      console.log(err);
+                      // console.log(err);
                     });
                 }
               }}
@@ -530,7 +530,7 @@ export default function Fee_table() {
                         }).then((res)=>{
                           if(res.data=="s"){
 
-                            console.log(res);
+                            // console.log(res);
                             Newsuccess("block");
                             setTimeout(()=>{
                               Newsuccess("none")
@@ -538,7 +538,7 @@ export default function Fee_table() {
                             },3500);
                           }
                           else{
-                            console.log(res.data);
+                            // console.log(res.data);
                             Newfail("block");
                             setTimeout(()=>{
                               Newfail("none")
@@ -757,7 +757,7 @@ export default function Fee_table() {
                       payment_date: date,
                     }),
                   };
-                  console.log(obj);
+                  // console.log(obj);
                   axios
                     .post("http://localhost:5000/edit_fees", obj)
                     .then((res) => {
@@ -770,17 +770,17 @@ export default function Fee_table() {
                           );
                         }, 3500);
 
-                        console.log("Success");
+                        // console.log("Success");
                       } else {
                           Newedit("block");
                           setTimeout(()=>{
                               Newedit("none");
                           },4000)
-                        console.log("Fail");
+                        // console.log("Fail");
                       }
                     })
                     .then((err) => {
-                      console.log(err);
+                      // console.log(err);
                     });
                 }
               }}

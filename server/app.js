@@ -8,6 +8,8 @@ const mysql=require("mysql2");
 const fast2sms=require("fast-two-sms");
 const schema=require("./schema");
 const { response } = require("express");
+const path=require("path");
+
 console.log(schema);
 
 let token='';
@@ -84,9 +86,10 @@ pool.execute(sql,(err,result)=>{
     console.log(result);
 });
 
+app.use(express.static(path.join("./build")))
+
 app.get("/",(req,res)=>{
-    console.log(req);
-   
+   res.sendFile(path.resolve(__dirname,"build","index.html"));
 });
 
 app.post("/auth",(req,res)=>{

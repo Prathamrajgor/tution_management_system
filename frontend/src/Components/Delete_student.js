@@ -7,7 +7,7 @@ import { Context } from '../App';
 export default function Detele_student() {
     const motion =useContext(Context)
     const student=useSelector((state)=>state.student.value);
-    console.log(student);
+    // console.log(student);
     const [check,Newcheck]=useState("unchecked");
 
     const [success,Newsuccess]=useState("none")
@@ -173,7 +173,7 @@ export default function Detele_student() {
                             <div className="but w-72 pl-4">
                             <button onClick={()=>{
                                 if(isChecked==true){
-                                    console.log(student.student_id);
+                                    // console.log(student.student_id);
                                     axios.put("http://localhost:5000/delete_student",{
                                         student_id:student.student_id
                                     }).then((res)=>{

@@ -289,7 +289,7 @@ export default function Add_student() {
                                     setTimeout(()=>{Newfail("none")},4000);
                                 }
                             }).then((err)=>{
-                                console.log("2",err);
+                                // console.log("2",err);
                             }) 
                         }}
                     }

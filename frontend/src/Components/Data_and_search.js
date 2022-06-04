@@ -47,7 +47,7 @@ export default function Data_and_search() {
       <h2 className='text-3xl font-semibold ml-4'>Student List</h2>
       <Scroll className='h-[80vh] '>
         {list.map((element)=>{
-          console.log(element.firstname.toLowerCase(),"name");
+          // console.log(element.firstname.toLowerCase(),"name");
           if(search=="" || (countString(search," ")==search.length)){
             if(id===element.student_id){
                   return (
@@ -164,7 +164,7 @@ export default function Data_and_search() {
                     <Link to="/edit_student">
 
                       <button  onClick={()=>{
-                          console.log(student);
+                          // console.log(student);
                           dispatch(update({
                             student_id:element.student_id,
                             firstname:element.firstname,
@@ -177,7 +177,7 @@ export default function Data_and_search() {
                             joining_date:element.joining_date,
                             fees:element.fees
                           }));
-                          console.log(student);
+                          // console.log(student);
                           
                         }} class="ml-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Edit <i class="fa-solid fa-pen-to-square"></i>
@@ -341,7 +341,7 @@ export default function Data_and_search() {
                     <Link to="/edit_student">
 
                       <button  onClick={()=>{
-                          console.log(student);
+                          // console.log(student);
                           dispatch(update({
                             student_id:element.student_id,
                             firstname:element.firstname,
@@ -354,7 +354,7 @@ export default function Data_and_search() {
                             joining_date:element.joining_date,
                             fees:element.fees
                           }));
-                          console.log(student);
+                          // console.log(student);
                           
                         }} class="ml-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Edit <i class="fa-solid fa-pen-to-square"></i>

@@ -21,7 +21,7 @@ export default function Edit_student() {
     const [success,Newsuccess]=useState("none")
     const [alert,Newalert]=useState("none")
     const [fail,Newfail]=useState("none");
-    console.log(id);
+    // console.log(id);
     return (
         <>
         <div className="pl-4 pt-2">
@@ -227,7 +227,7 @@ export default function Edit_student() {
               placeholder="Eg: 0123456789"
               value={date}
               onChange={(e) => {
-                console.log(e.target.value);
+                // console.log(e.target.value);
                 Newdate(e.target.value);
                 // console.log(new Date());
               }}
@@ -296,7 +296,7 @@ export default function Edit_student() {
                                       setTimeout(()=>{Newfail("none")},4000);
                                   }
                               }).then((err)=>{
-                                  console.log("2",err);
+                                  // console.log("2",err);
                               }) 
                           }}
                       }
