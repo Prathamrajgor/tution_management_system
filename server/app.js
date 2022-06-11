@@ -54,12 +54,6 @@ app.use((req,res,next)=>{
     }
 });
 
-mongoose.connect(process.env.DB,()=>{
-    // console.log(process.env.DATABASE)
-    console.log("Connection to Database successfull");
-},(err)=>{
-    console.log(err);
-});
 
 function generateOTP() {
     // Declare a digits variable 
@@ -73,10 +67,10 @@ function generateOTP() {
 }
 
 const pool=mysql.createPool({
-    host:process.env.DB_HOST,
-    user:process.env.DB_USER,
-    database:process.env.DB_NAME,
-    password:process.env.DB_PASSWORD
+    host:"",
+    user:"",
+    database:"",
+    password:""
 });
 
 
@@ -272,79 +266,12 @@ app.post("/delete_fees",(req,res)=>{
     });
 });
 
+app.get('*', (req, res)=>{
+    res.sendFile(path.resolve(__dirname,"build","index.html"));
+})
 
 app.listen(process.env.PORT,()=>{
     console.log(`Listening on Port ${process.env.PORT}`);
 });
 
-
-
-
-setInterval(()=>{
-    // Backup data to mongoDB cluster 
-    pool.execute("SELECT * FROM student;",(err,result)=>{
-        if(err){
-            console.log(err);
-        }
-        else{
-            console.log(result[2]);
-            pool.execute("SELECT * FROM student;",(err,result)=>{
-                let date=new Date();
-                if(err){
-                    console.log(err);
-                }
-                else{
-                    schema.find({}, async(err,response)=>{
-                        if(response.length==0){
-                            console.log("lenght: ",response.length);
-                        }
-                        else{
-                            schema.deleteMany({},(err,result2)=>{
-                                if(err){
-                                    console.log("Error:",err);
-                                }
-                                else{
-                                    console.log("result:",result);
-                                    for(let i=0;i<result.length;i++){
-                                        let a =result[i];
-                                        schema.create({
-                                            time:String(new Date()),
-                                            data:{
-                                                student_id:a.student_id,
-                                                firstname:a.firstname,
-                                                lastname:a.lastname,
-                                                std:a.std,
-                                                school_name:a.school_name,
-                                                mother_name:a.mother_name,
-                                                father_name:a.father_name,
-                                                contact:a.contact,
-                                                joining_date:a.joining_date,
-                                                fees:a.fees,
-                                                june:a.june,
-                                                july:a.july,
-                                                august:a.august,
-                                                september:a.september,
-                                                october:a.october,
-                                                november:a.november,
-                                                december:a.december,
-                                                january:a.january,
-                                                february:a.february,
-                                                march:a.march,
-                                                april:a.april,
-                                                may:a.may
-                                            }
-                                        });
-                                    }
-                                    console.log(result[0].july);
-            
-                                }
-                            })
-            
-                        }
-                    })
-                }
-            });
-        }
-    })
-},1000*60*60*24);
 
