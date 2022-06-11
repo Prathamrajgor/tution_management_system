@@ -11,5 +11,5 @@ To delete student, one can click on the delete button in student list and the st
 To manage fee records one can go to the fee details tab in the navbar where he can add, edit and delete fee records. 
 
 ## Running on Machine 
-To run it on the local machine we can git clone the repo, go to server folder and then changing teh MYSQL password to your MYSQL server's password.
-Once this has been done we can start the server by typing node app.js and the server will be started. 
+To run it on the local machine we can git clone the repo, go to server folder and then chang the MYSQL password to your MYSQL server's password.
+Once this has been done we can start the server by typing node app.js on teh terminal  and the server will be started. Now we can view our app on localhost:5000 
