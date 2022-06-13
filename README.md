@@ -2,6 +2,8 @@
 A fully functional and responsive Tution management system webapp made by me. It has been made using React, Node js, Express, MYSQL, Bootstrap and Tailwind CSS.    
 
 ## Usage
+### Creating Table
+First, We need to create a table with name student in our MYSQL DB.
 ### Managing Student Data
 The Management system is made to handle student data. To add a student, we can can Addstudent data my going to the navbar and clicking on Add Student tab. 
 If onw wants to edit student's details, he can click on teh edit button in student list. After clicking on it a new form opens up where he can edit teh details.
