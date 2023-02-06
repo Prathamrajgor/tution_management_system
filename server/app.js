@@ -86,18 +86,7 @@ app.get("/",(req,res)=>{
    res.sendFile(path.resolve(__dirname,"build","index.html"));
 });
 
-app.post("/auth",(req,res)=>{
-    if(req.body.code=="ritagor121234"){
-        token=CsrfToken(24)
-        res.send({
-            state:"s",
-            token:token
-        });
-    }
-    else{
-        res.send("u");
-    }
-});
+
 
 
 app.use((req,res,next)=>{
